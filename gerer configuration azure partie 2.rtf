@@ -1,0 +1,401 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue255;\red0\green0\blue0;\red37\green127\blue159;
+\red144\green1\blue18;\red255\green255\blue11;\red107\green0\blue1;\red251\green0\blue7;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c100000;\cssrgb\c0\c0\c0;\cssrgb\c16863\c56863\c68627;
+\cssrgb\c63922\c8235\c8235;\cssrgb\c100000\c100000\c0;\cssrgb\c50196\c0\c0;\cssrgb\c100000\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs21\fsmilli10667 \cf0 C:\\0020-Projets>az appconfig credential list -n cfg-exemple-rec -g rg-exemple-rec\
+[\
+\'a0 \{\
+\'a0\'a0\'a0 "connectionString": "Endpoint=https://cfg-exemple-rec.azconfig.io;Id=At/u;Secret=zorg/blob/plop/paf/pif/lA=",\
+\'a0\'a0\'a0 "id": "At/u",\
+\'a0\'a0\'a0 "lastModified": "2023-10-30T13:53:37+00:00",\
+\'a0\'a0\'a0 "name": "Primary",\
+\'a0\'a0\'a0 "readOnly": false,\
+\'a0\'a0\'a0 "value": " zorg/blob/plop/paf/pif/lA ="\
+\'a0 \},\
+\'a0 \{\
+\'a0\'a0\'a0 "connectionString": "Endpoint=https://cfg-exemple-rec.azconfig.io;Id=MH0v;Secret=grandZorg=",\
+\'a0\'a0\'a0 "id": "MH0v",\
+\'a0\'a0\'a0 "lastModified": "2023-10-30T13:53:37+00:00",\
+\'a0\'a0\'a0 "name": "Secondary",\
+\'a0\'a0\'a0 "readOnly": false,\
+\'a0\'a0\'a0 "value": " grandZorg="\
+\'a0 \},\
+\'a0 \{\
+\'a0\'a0\'a0 "connectionString": "Endpoint=https://cfg-exemple-rec.azconfig.io;Id=I1iv;Secret=petitzorg=",\
+\'a0\'a0\'a0 "id": "I1iv",\
+\'a0\'a0\'a0 "lastModified": "2023-10-30T13:53:37+00:00",\
+\'a0\'a0\'a0 "name": "Primary Read Only",\
+\'a0\'a0\'a0 "readOnly": true,\
+\'a0\'a0\'a0 "value": " petitzorg="\
+\'a0 \},\
+\'a0 \{\
+\'a0\'a0\'a0 "connectionString": "Endpoint=https://cfg-exemple-rec.azconfig.io;Id=pyDH;Secret=mouenzorg=",\
+\'a0\'a0\'a0 "id": "pyDH",\
+\'a0\'a0\'a0 "lastModified": "2023-10-30T13:53:37+00:00",\
+\'a0\'a0\'a0 "name": "Secondary Read Only",\
+\'a0\'a0\'a0 "readOnly": true,\
+\'a0\'a0\'a0 "value": " mouenzorg="\
+\'a0 \}\
+]\
+
+\fs29\fsmilli14667 \'a0\
+
+\fs21\fsmilli10667 const string azAppConfigConnectionString = @"Endpoint=https://cfg-exemple-rec.azconfig.io;Id=At/u;Secret= zorg/blob/plop/paf/pif/lA=";\
+\'a0\
+var builder = WebApplication.CreateBuilder(args);\
+builder.Configuration\
+\'a0\'a0\'a0\'a0\'a0\'a0 .AddAzureAppConfiguration(azAppConfigConnectionString);\
+
+\fs29\fsmilli14667 \'a0\
+
+\fs21\fsmilli10667 \'a0\
+\'a0 "ConnectionStrings": \{\
+\'a0\'a0\'a0 "AppConfiguration": "Endpoint=https://cfg-exemple-rec.azconfig.io;Id=At/u;Secret=Zorg/blob/plop/paf/pif/lA="\
+\'a0 \},\
+
+\fs29\fsmilli14667 \'a0
+\fs21\fsmilli10667 \
+
+\fs29\fsmilli14667 \'a0
+\fs21\fsmilli10667 \
+
+\fs29\fsmilli14667 \'a0
+\fs21\fsmilli10667 \
+string azAppConfigConnectionString = builder.Configuration.GetConnectionString("AppConfiguration");\
+\'a0\
+\'a0\
+\{\
+\'a0 "profiles": \{\
+\'a0\'a0\'a0 "IIS Express": \{\
+\'a0\'a0\'a0\'a0\'a0 "commandName": "IISExpress",\
+\'a0\'a0\'a0\'a0\'a0 "launchBrowser": true,\
+\'a0\'a0\'a0\'a0\'a0 "launchUrl": "https://localhost:5001/ConfigurationPage",\
+\'a0\'a0\'a0\'a0\'a0 "environmentVariables": \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 "ASPNETCORE_ENVIRONMENT": "Development",\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 "AppConfiguration": "Endpoint=https://cfg-exemple-rec.azconfig.io;Id=At/u;Secret=Zorg/blob/plop/paf/pif/lA="\
+\'a0\'a0\'a0\'a0\'a0 \},\
+\'a0\'a0\'a0 \},\
+\'a0\'a0\'a0 "Exemple": \{\
+\'a0\'a0\'a0\'a0\'a0 "commandName": "Project",\
+\'a0\'a0\'a0\'a0\'a0 "launchBrowser": true,\
+\'a0\'a0\'a0\'a0\'a0 "launchUrl": "https://localhost:5001/ConfigurationPage",\
+\'a0\'a0\'a0\'a0\'a0 "environmentVariables": \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 "ASPNETCORE_ENVIRONMENT": "Development",\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 "AppConfiguration": "Endpoint=https://cfg-exemple-rec.azconfig.io;Id=At/u;Secret=Zorg/blob/plop/paf/pif/lA="\
+\'a0\'a0\'a0\'a0\'a0 \},\
+\'a0\'a0\'a0\'a0\'a0 "dotnetRunMessages": "true",\
+\'a0\'a0\'a0\'a0\'a0 "applicationUrl": "https://localhost:5001;http://localhost:5000"\
+\'a0\'a0\'a0 \}\
+\'a0 \},\
+\'a0\
+\'a0\
+\'a0\
+string azAppConfigConnectionString = builder.Configuration("AppConfiguration");\
+
+\fs29\fsmilli14667 \'a0\
+
+\fs21\fsmilli10667 \'a0\
+builder.Configuration.AddAzureAppConfiguration(options =>\
+\'a0\'a0\'a0\'a0\'a0\'a0 \{\
+options.Connect(azAppConfigConnectionString)\
+.Select(KeyFilter.Any, LabelFilter.Null)\
+.Select(KeyFilter.Any, \'abRecette\'bb\'a0)\'a0;\
+\'a0\'a0\'a0\'a0\'a0\'a0 \});\
+
+\fs29\fsmilli14667 \'a0\
+
+\fs21\fsmilli10667 \'a0\
+builder.Configuration.AddAzureAppConfiguration(options =>\
+\'a0\'a0\'a0\'a0\'a0\'a0 \{\
+options.Connect(azAppConfigConnectionString)\
+.Select(\'abFredCle*\'bb, LabelFilter.Null)\'a0;\
+\'a0\'a0\'a0\'a0\'a0\'a0 \});\
+
+\fs29\fsmilli14667 \'a0\
+\pard\pardeftab720\li944\fi-944\partightenfactor0
+
+\f1\fs21\fsmilli10667 \cf2 \expnd0\expndtw0\kerning0
+\'a0
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \cf2 \expnd0\expndtw0\kerning0
+using\cf0  Microsoft.AspNetCore.Components;
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \cf2 \expnd0\expndtw0\kerning0
+using\cf0  Microsoft.AspNetCore.Components.Forms;
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \cf2 \expnd0\expndtw0\kerning0
+using\cf0  Exemple.Models;
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \cf2 \expnd0\expndtw0\kerning0
+using\cf0  System;
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \cf2 \expnd0\expndtw0\kerning0
+using\cf0  System.Collections.Generic;
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \cf2 \expnd0\expndtw0\kerning0
+namespace\cf0  Exemple.Pages
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\{
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0 \cf2 public\cf0  \cf2 partial\cf0  \cf2 class\cf0  \cf4 ConfigurationPage
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0 \{
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf2 public\cf0  \cf4 ConfigurationPage\cf0 ()
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \{
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \}
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf2 protected\cf0  \cf2 override\cf0  \cf2 void\cf0  OnInitialized()
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \{
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 Logger.LogDebug(\cf5 "OnInitialized()"\cf0 );
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\li1888\fi-1888\partightenfactor0
+
+\f1\fs21\fsmilli10667 \cf0 \expnd0\expndtw0\kerning0
+\'a0
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\li944\fi-944\partightenfactor0
+
+\f1\fs21\fsmilli10667 \cf0 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cb6 Logger.LogDebug(\cf5 $"App Configuration : FredCle = \cf0 \{AppConfig[\cf5 "FredCle"\cf0 ]\}\cf5 "\cf0 );
+\f0\fs29\fsmilli14667 \cb1 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\li944\fi-944\partightenfactor0
+
+\f1\fs21\fsmilli10667 \cf0 \cb6 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 Logger.LogDebug(\cf5 $"App Configuration : FredCle2 = \cf0 \{AppConfig[\cf5 "FredCle2"\cf0 ]\}\cf5 "\cf0 );
+\f0\fs29\fsmilli14667 \cb1 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \cb6 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 Logger.LogDebug(\cf5 $"App Configuration : FredValue = \cf0 \{AppConfig[\cf5 "FredValue"\cf0 ]\}\cf5 "\cf0 );
+\f0\fs29\fsmilli14667 \cb1 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\li944\fi-944\partightenfactor0
+
+\f1\fs21\fsmilli10667 \cf0 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \}
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 [Inject]
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 ILogger<ConfigurationPage> Logger \{ \cf2 get\cf0 ; \cf2 set\cf0 ; \}
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cb6 [Inject]
+\f0\fs29\fsmilli14667 \cb1 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cb6 IConfiguration AppConfig \{ \cf2 get\cf0 ; \cf2 set\cf0 ; \}
+\f0\fs29\fsmilli14667 \cb1 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0 \}
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\li944\fi-944\sa213\partightenfactor0
+
+\f1\fs21\fsmilli10667 \cf0 \expnd0\expndtw0\kerning0
+\}
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+\'a0\
+\'a0\
+\pard\pardeftab720\li944\fi-944\partightenfactor0
+
+\f1\fs21\fsmilli10667 \cf0 \expnd0\expndtw0\kerning0
+@page \cf5 "/ConfigurationPage"
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+@\cf2 using\cf0  System.ComponentModel.DataAnnotations
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+@\cf2 using\cf0  Models;
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \cf2 \expnd0\expndtw0\kerning0
+<\cf7 div\cf0  \cf8 class\cf2 ="alert alert-secondary mt-4"\cf0  \cf8 role\cf2 ="alert">
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0 \cf2 <\cf7 strong\cf2 >\cf0 Application configuration\cf2 </\cf7 strong\cf2 >
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0 \cf2 <\cf7 table\cf2 >
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf2 <\cf7 tr\cf2 >
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf2 <\cf7 th\cf2 >\cf0 cl\'e9\cf2 </\cf7 th\cf2 >
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf2 <\cf7 th\cf2 >\cf0 Valeur\cf2 </\cf7 th\cf2 >
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf2 </\cf7 tr\cf2 >
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf2 <\cf7 tr\cf2 >
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf2 <\cf7 td\cf2 >\cf0 .\cf2 </\cf7 td\cf2 >
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf2 <\cf7 td\cf2 >\cf0 App Configuration\cf2 </\cf7 td\cf2 >
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf2 </\cf7 tr\cf2 >
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf2 <\cf7 tr\cf2 >
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf2 <\cf7 td\cf2 >\cf0 AppConfig["FredCle"]\cf2 </\cf7 td\cf2 >
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf2 <\cf7 td\cf2 >\cf0 @AppConfig[\cf5 "FredCle"\cf0 ]\cf2 </\cf7 td\cf2 >
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf2 </\cf7 tr\cf2 >
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf2 <\cf7 tr\cf2 >
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf2 <\cf7 td\cf2 >\cf0 AppConfig["FredCle2"]\cf2 </\cf7 td\cf2 >
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf2 <\cf7 td\cf2 >\cf0 @AppConfig[\cf5 "FredCle2"\cf0 ]\cf2 </\cf7 td\cf2 >
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf2 </\cf7 tr\cf2 >
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf2 <\cf7 tr\cf2 >
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf2 <\cf7 td\cf2 >\cf0 AppConfig["FredValue"]\cf2 </\cf7 td\cf2 >
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf2 <\cf7 td\cf2 >\cf0 @AppConfig[\cf5 "FredValue"\cf0 ]\cf2 </\cf7 td\cf2 >
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+
+\f1\fs21\fsmilli10667 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \cf2 </\cf7 tr\cf2 >
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs25\fsmilli12667 \cf0 \expnd0\expndtw0\kerning0
+\'a0
+\f0\fs29\fsmilli14667 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\li944\fi-944\partightenfactor0
+
+\f1\fs21\fsmilli10667 \cf0 \expnd0\expndtw0\kerning0
+\'a0\'a0\'a0 \cf2 </\cf7 table\cf2 >
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\li944\fi-944\sa213\partightenfactor0
+
+\f1\fs21\fsmilli10667 \cf2 \expnd0\expndtw0\kerning0
+</\cf7 div\cf2 >
+\f0\fs29\fsmilli14667 \cf0 \kerning1\expnd0\expndtw0 \
+\'a0\
+}
